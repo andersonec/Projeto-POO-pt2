@@ -135,7 +135,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
     private void cpfCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfCActionPerformed
         // TODO add your handling code here:
-        clienteC.setCpf(Integer.parseInt(cpfC.getText()));
+        clienteC.setCpf(Integer.parseInt(cpfC.getText())); 
     }//GEN-LAST:event_cpfCActionPerformed
 
     private void cadastrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarCActionPerformed
