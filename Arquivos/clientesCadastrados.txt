@@ -1,0 +1,5 @@
+CLIENTES CADASTRADOS:
+
+Codigo: 2446
+Nome: Anderson
+CPF: 123
