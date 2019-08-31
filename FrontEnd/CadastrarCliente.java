@@ -8,7 +8,9 @@ import javax.swing.JOptionPane;
  * @author andersonsantos
  */
 public class CadastrarCliente extends javax.swing.JFrame {
+    File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
     Cliente clienteC = new Cliente();
+    Random rand = new Random();
     
     /**
      * Creates new form CadastrarCliente
@@ -33,6 +35,8 @@ public class CadastrarCliente extends javax.swing.JFrame {
         cadastrarC = new javax.swing.JButton();
         nomeC = new javax.swing.JTextField();
         cpfC = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        sobrenomeC = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -80,6 +84,16 @@ public class CadastrarCliente extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(95, 94, 94));
+        jLabel4.setText("SOBRENOME:");
+
+        sobrenomeC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sobrenomeCActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -89,6 +103,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(nomeC)
+                    .addComponent(cpfC)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -97,24 +112,29 @@ public class CadastrarCliente extends javax.swing.JFrame {
                                 .addGap(87, 87, 87)
                                 .addComponent(voltarC)
                                 .addGap(60, 60, 60)
-                                .addComponent(cadastrarC)))
+                                .addComponent(cadastrarC))
+                            .addComponent(jLabel4))
                         .addGap(0, 38, Short.MAX_VALUE))
-                    .addComponent(cpfC))
+                    .addComponent(sobrenomeC))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(nomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(sobrenomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cpfC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(voltarC)
                     .addComponent(cadastrarC))
@@ -126,27 +146,89 @@ public class CadastrarCliente extends javax.swing.JFrame {
 
     private void voltarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarCActionPerformed
         // TODO add your handling code here:
+        dispose();
     }//GEN-LAST:event_voltarCActionPerformed
 
     private void nomeCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCActionPerformed
         // TODO add your handling code here:
-        clienteC.setNome(nomeC.getText());
+        clienteC.setCodigo(rand.nextInt(9999));
+        int numNome = nomeC.getText().length();
+        char[] verificaNome = nomeC.getText().toCharArray();
+        boolean ver = true;
+        for(int i = 0; i < verificaNome.length; i++){
+            if(!Character.isLetter(verificaNome[i])){
+                ver = false;
+            }
+        }
+        if(numNome < 2){
+            JOptionPane.showMessageDialog(null, "Nome inválido, por favor, digite novamente!");
+        }
+        else if(ver == false){
+            JOptionPane.showMessageDialog(null, "O nome não pode conter numeros ou caracteres especiais, por favor, digite novamente!");
+        }
+        else{
+            clienteC.setNome(nomeC.getText());
+        }
     }//GEN-LAST:event_nomeCActionPerformed
 
     private void cpfCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfCActionPerformed
         // TODO add your handling code here:
-        clienteC.setCpf(Integer.parseInt(cpfC.getText())); 
+        int numCpf = cpfC.getText().length();
+        char[] verificaCpf = cpfC.getText().toCharArray();
+        boolean ver = true;
+        for(int i = 0; i < verificaCpf.length; i++){
+            if(!Character.isDigit(verificaCpf[i])){
+                ver = false;
+            }
+        }
+        if(numCpf != 11){
+            JOptionPane.showMessageDialog(null, "O numero do CPF deve conter 11 digitos, por favor, digite novamente!");
+        }
+        else if(ver == false){
+            JOptionPane.showMessageDialog(null, "O numero do CPF deve conter apenas numeros, por favor, digite novamente!");
+        }
+        else{
+            clienteC.setCpf(Long.parseLong(cpfC.getText()));
+        }
     }//GEN-LAST:event_cpfCActionPerformed
 
     private void cadastrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarCActionPerformed
         // TODO add your handling code here:
-        if(cpfC.getText().length() <= 10 && cpfC.getText().length() >= 12){
-            JOptionPane.showMessageDialog(null, "O numero do CPF deve conter 11 digitos, por favor, digite novamente!");
-        }
-        else{
+        try{
+            FileWriter cadastrarFile = new FileWriter(clientesCad, true);
+            BufferedWriter cadastrarBuff = new BufferedWriter(cadastrarFile);
+            cadastrarBuff.write("\n" + "\n" + clienteC.getCodigo() + 
+                                "\nNome: " + clienteC.getNome() + " " + clienteC.getSobrenome() +
+                                "\nCPF: " + clienteC.getCpf());
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+            cadastrarBuff.close();
+            cadastrarFile.close();
+            dispose();
+        }catch (IOException except){
+            except.printStackTrace();
         }
     }//GEN-LAST:event_cadastrarCActionPerformed
+
+    private void sobrenomeCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sobrenomeCActionPerformed
+        // TODO add your handling code here:
+        int numNome = sobrenomeC.getText().length();
+        char[] verificaNome = sobrenomeC.getText().toCharArray();
+        boolean ver = true;
+        for(int i = 0; i < verificaNome.length; i++){
+            if(!Character.isLetter(verificaNome[i])){
+                ver = false;
+            }
+        }
+        if(numNome <= 2){
+            JOptionPane.showMessageDialog(null, "Sobrenome inválido, por favor, digite novamente!");
+        }
+        else if(ver == false){
+            JOptionPane.showMessageDialog(null, "O sobrenome não pode conter numeros ou caracteres especiais, por favor, digite novamente!");
+        }
+        else{
+            clienteC.setSobrenome(sobrenomeC.getText());
+        }
+    }//GEN-LAST:event_sobrenomeCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,7 +271,9 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nomeC;
+    private javax.swing.JTextField sobrenomeC;
     private javax.swing.JButton voltarC;
     // End of variables declaration//GEN-END:variables
 }

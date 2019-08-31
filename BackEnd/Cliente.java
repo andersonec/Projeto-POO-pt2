@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Cliente {
     private int codigo;
     private String nome;
+    private String sobrenome;
     private long cpf;
     private String cadastroC;
 
@@ -20,6 +21,13 @@ public class Cliente {
         return nome;
     }
 
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
     public void setCpf(long cpf) {
         this.cpf = cpf;
     }
@@ -32,15 +40,5 @@ public class Cliente {
     }
     public String getCadastroC() {
         return cadastroC;
-    }
-
-    public void cadastrar() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Digite o nome: ");
-        setNome(input.nextLine());
-        System.out.println("Digite o CPF: ");
-        setCpf(input.nextLong());
-        System.out.println("CADASTRADO");
-        setCadastroC("\nCodigo: " + getCodigo() + "\nNome: " + getNome() + "\nCPF: " + getCpf());
     }
 }

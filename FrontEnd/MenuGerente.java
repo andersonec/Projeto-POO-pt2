@@ -1,5 +1,4 @@
 package FrontEnd;
-import BackEnd.*;
 public class MenuGerente extends javax.swing.JFrame {
 
     /**
@@ -22,10 +21,10 @@ public class MenuGerente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        cadastrarCliente = new javax.swing.JMenuItem();
+        listarClientes = new javax.swing.JMenuItem();
+        removerCliente = new javax.swing.JMenuItem();
+        listarRemovidos = new javax.swing.JMenuItem();
         menuProduto = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -40,11 +39,11 @@ public class MenuGerente extends javax.swing.JFrame {
         jMenuItem13 = new javax.swing.JMenuItem();
         informacao = new javax.swing.JMenu();
         jMenuItem14 = new javax.swing.JMenuItem();
-        jMenuItem15 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(1, 1, 1));
-        setPreferredSize(new java.awt.Dimension(1366, 1024));
+        setPreferredSize(new java.awt.Dimension(1024, 968));
+        setResizable(false);
 
         jInternalFrame1.setBackground(new java.awt.Color(1, 1, 1));
         jInternalFrame1.setForeground(new java.awt.Color(1, 1, 1));
@@ -60,30 +59,35 @@ public class MenuGerente extends javax.swing.JFrame {
         menuCliente.setText("CLIENTES");
         menuCliente.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
 
-        jMenuItem2.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem2.setText("CADASTRAR");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        cadastrarCliente.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        cadastrarCliente.setForeground(new java.awt.Color(95, 94, 94));
+        cadastrarCliente.setText("CADASTRAR");
+        cadastrarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                cadastrarClienteActionPerformed(evt);
             }
         });
-        menuCliente.add(jMenuItem2);
+        menuCliente.add(cadastrarCliente);
 
-        jMenuItem3.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem3.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem3.setText("LISTAR CADASTRADOS");
-        menuCliente.add(jMenuItem3);
+        listarClientes.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        listarClientes.setForeground(new java.awt.Color(95, 94, 94));
+        listarClientes.setText("LISTAR CADASTRADOS");
+        listarClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarClientesActionPerformed(evt);
+            }
+        });
+        menuCliente.add(listarClientes);
 
-        jMenuItem4.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem4.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem4.setText("REMOVER");
-        menuCliente.add(jMenuItem4);
+        removerCliente.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        removerCliente.setForeground(new java.awt.Color(95, 94, 94));
+        removerCliente.setText("REMOVER");
+        menuCliente.add(removerCliente);
 
-        jMenuItem5.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem5.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem5.setText("LISTAR REMOVIDOS");
-        menuCliente.add(jMenuItem5);
+        listarRemovidos.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        listarRemovidos.setForeground(new java.awt.Color(95, 94, 94));
+        listarRemovidos.setText("LISTAR REMOVIDOS");
+        menuCliente.add(listarRemovidos);
 
         jMenuBar1.add(menuCliente);
 
@@ -178,11 +182,6 @@ public class MenuGerente extends javax.swing.JFrame {
         });
         informacao.add(jMenuItem14);
 
-        jMenuItem15.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem15.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem15.setText("TELEFONES ÚTEIS");
-        informacao.add(jMenuItem15);
-
         jMenuBar1.add(informacao);
 
         jInternalFrame1.setJMenuBar(jMenuBar1);
@@ -196,8 +195,8 @@ public class MenuGerente extends javax.swing.JFrame {
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 48, Short.MAX_VALUE))
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(51, 51, 51))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -224,13 +223,21 @@ public class MenuGerente extends javax.swing.JFrame {
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
+        Informacoes info = new Informacoes();
+        info.setVisible(true);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
         // TODO add your handling code here:
         CadastrarCliente cadastrarC = new CadastrarCliente();
         cadastrarC.setVisible(true);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_cadastrarClienteActionPerformed
+
+    private void listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarClientesActionPerformed
+        // TODO add your handling code here:
+        ListarClientes listarC = new ListarClientes();
+        listarC.setVisible(true);
+    }//GEN-LAST:event_listarClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,6 +276,7 @@ public class MenuGerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem cadastrarCliente;
     private javax.swing.JMenu informacao;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel2;
@@ -280,17 +288,15 @@ public class MenuGerente extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem listarClientes;
+    private javax.swing.JMenuItem listarRemovidos;
     private javax.swing.JMenu menuCliente;
     private javax.swing.JMenu menuProduto;
     private javax.swing.JMenu menuVenda;
+    private javax.swing.JMenuItem removerCliente;
     // End of variables declaration//GEN-END:variables
 }

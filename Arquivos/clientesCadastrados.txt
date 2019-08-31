@@ -1,5 +1,60 @@
 CLIENTES CADASTRADOS:
+0
+Nome: null
+CPF: 11235468971
 
-Codigo: 2446
+764
+Nome: Alexandro
+CPF: 0
+
+1086
 Nome: Anderson
-CPF: 123
+CPF: 13265478952
+
+0
+Nome: null
+CPF: 0
+
+4580
+Nome: fasdlfkja
+CPF: 0
+
+8904
+Nome: fasdfa
+CPF: 12345678914
+
+1251
+Nome: Anderson
+CPF: 12345678952
+
+0
+Nome: null
+CPF: 11235468971
+
+764
+Nome: Alexandro
+CPF: 0
+
+1086
+Nome: Anderson
+CPF: 13265478952
+
+0
+Nome: null
+CPF: 0
+
+4580
+Nome: fasdlfkja
+CPF: 0
+
+8904
+Nome: fasdfa
+CPF: 12345678914
+
+1251
+Nome: Anderson
+CPF: 12345678952
+
+6623
+Nome: Kalil Viado
+CPF: 24242424242

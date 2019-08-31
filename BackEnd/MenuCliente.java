@@ -1,42 +1,38 @@
+package BackEnd;
 import java.util.*;
 import java.util.regex.*;
 import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
 import java.io.*;
-import BackEnd.*;
 
 public class MenuCliente {
+    File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
+    Random rand = new Random();
     public static void menuC() throws IOException {
         Scanner input = new Scanner(System.in);
-        Random rand = new Random();
-        Cliente cliente = new Cliente();
-        File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
 
-        int i = 0;
+    }
+    public void cadastroCliente() throws IOException {
+        Cliente cliente = new Cliente();
+        FileWriter cadastrarFile = new FileWriter(clientesCad, true);
+        BufferedWriter cadastrarBuff = new BufferedWriter(cadastrarFile);
+        cliente.setCodigo(rand.nextInt(9999));
+        try {
+            if (!clientesCad.exists()) {
+                clientesCad.createNewFile();
+            }
+            cadastrarBuff.write(cliente.getCadastroC() + "\n");
+            cadastrarBuff.close();
+            cadastrarFile.close();
+        } catch (IOException except) {
+            except.printStackTrace();
+        }
+    }
+    
+    
+    /*   int i = 0;
         int optC = 0;
         do {
-            System.out.println("\nMENU CLIENTE");
-            System.out.println("1 - CADASTRAR CLIENTE");
-            System.out.println("2 - LISTAR CLIENTES");
-            System.out.println("3 - REMOVER CLIENTE");
-            System.out.println("4 - LISTAR CLIENTES EXCLUIDOS");
-            System.out.println("0 - VOLTAR");
-            optC = input.nextInt();
             switch (optC) {
-            case 1:
-                FileWriter cadastrarFile = new FileWriter(clientesCad, true);
-                BufferedWriter cadastrarBuff = new BufferedWriter(cadastrarFile);
-                cliente.setCodigo(rand.nextInt(9999));
-                cliente.cadastrar();
-                try {
-                    if (!clientesCad.exists()) {
-                        clientesCad.createNewFile();
-                    }
-                    cadastrarBuff.write(cliente.getCadastroC() + "\n");
-                    cadastrarBuff.close();
-                    cadastrarFile.close();
-                } catch (IOException except) {
-                    except.printStackTrace();
-                }
                 break;
             case 2:
                 FileReader listarFile = new FileReader(clientesCad);
@@ -73,6 +69,6 @@ public class MenuCliente {
                 System.out.println("LISTA DE CLIENTES EXCLUIDOS");
                 break;
             }
-        } while (optC != 0);
+        } while (optC != 0);*/
     }
-}
+
