@@ -34,6 +34,7 @@ public class Informacoes extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jButton1.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(95, 94, 94));
@@ -49,11 +50,13 @@ public class Informacoes extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("INFORMAÇÕES");
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
         jTextArea1.setForeground(new java.awt.Color(95, 94, 94));
         jTextArea1.setRows(5);
         jTextArea1.setText("Desenvolvido por:\n\tAnderson Martins dos Santos\n\tAlexandro de Jesus Silva\nProfessor:\n\tKalil Araujo Bispo");
+        jTextArea1.setEnabled(false);
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
