@@ -36,7 +36,8 @@ public class Cliente {
     }
 
     public void setCadastroC(String cadastroC) {
-        this.cadastroC = cadastroC;
+        this.cadastroC += "\nNome" + getNome() + " " + getSobrenome() +
+                          "\nCPF: " + getCpf();
     }
     public String getCadastroC() {
         return cadastroC;
