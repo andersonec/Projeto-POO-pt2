@@ -17,6 +17,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
      */
     public CadastrarCliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -37,9 +38,11 @@ public class CadastrarCliente extends javax.swing.JFrame {
         cpfC = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         sobrenomeC = new javax.swing.JTextField();
+        valNome = new javax.swing.JCheckBox();
+        valSobrenome = new javax.swing.JCheckBox();
+        valCpf = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Century Schoolbook L", 1, 18)); // NOI18N
@@ -94,6 +97,24 @@ public class CadastrarCliente extends javax.swing.JFrame {
             }
         });
 
+        valNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valNomeActionPerformed(evt);
+            }
+        });
+
+        valSobrenome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valSobrenomeActionPerformed(evt);
+            }
+        });
+
+        valCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                valCpfActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -102,8 +123,6 @@ public class CadastrarCliente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(nomeC)
-                    .addComponent(cpfC)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -114,8 +133,19 @@ public class CadastrarCliente extends javax.swing.JFrame {
                                 .addGap(60, 60, 60)
                                 .addComponent(cadastrarC))
                             .addComponent(jLabel4))
-                        .addGap(0, 38, Short.MAX_VALUE))
-                    .addComponent(sobrenomeC))
+                        .addGap(0, 162, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(valCpf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cpfC))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(valSobrenome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sobrenomeC))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(valNome)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(nomeC)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -125,15 +155,21 @@ public class CadastrarCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sobrenomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sobrenomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valSobrenome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cpfC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cpfC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valCpf))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(voltarC)
@@ -167,6 +203,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O nome não pode conter numeros ou caracteres especiais, por favor, digite novamente!");
         }
         else{
+            valNome.setSelected(true);
             clienteC.setNome(nomeC.getText());
         }
     }//GEN-LAST:event_nomeCActionPerformed
@@ -189,23 +226,40 @@ public class CadastrarCliente extends javax.swing.JFrame {
         }
         else{
             clienteC.setCpf(Long.parseLong(cpfC.getText()));
+            if(clienteC.getCpf() != 0){
+                valCpf.setSelected(true);
+            }
+            else{
+                valCpf.setSelected(false);
+            }
         }
     }//GEN-LAST:event_cpfCActionPerformed
 
     private void cadastrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarCActionPerformed
         // TODO add your handling code here:
-        try{
-            FileWriter cadastrarFile = new FileWriter(clientesCad, true);
-            BufferedWriter cadastrarBuff = new BufferedWriter(cadastrarFile);
-            cadastrarBuff.write("\n" + "\n" + clienteC.getCodigo() + 
-                                "\nNome: " + clienteC.getNome() + " " + clienteC.getSobrenome() +
-                                "\nCPF: " + clienteC.getCpf());
-            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
-            cadastrarBuff.close();
-            cadastrarFile.close();
-            dispose();
-        }catch (IOException except){
-            except.printStackTrace();
+        if(clienteC.getNome() == null){
+            JOptionPane.showMessageDialog(null, "Erro de Nome, por favor, confira.");
+        }
+        else if(clienteC.getSobrenome() == null){
+            JOptionPane.showMessageDialog(null, "Erro de Sobrenome, por favor, confira.");
+        }
+        else if(clienteC.getCpf() == 0){
+            JOptionPane.showMessageDialog(null, "Erro de CPF, por favor, confira.");
+        }
+        else{
+            try{
+                FileWriter cadastrarFile = new FileWriter(clientesCad, true);
+                BufferedWriter cadastrarBuff = new BufferedWriter(cadastrarFile);
+                cadastrarBuff.write("\n" + "\n" + clienteC.getCodigo() + 
+                                    "\nNome: " + clienteC.getNome() + " " + clienteC.getSobrenome() +
+                                    "\nCPF: " + clienteC.getCpf());
+                JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+                cadastrarBuff.close();
+                cadastrarFile.close();
+                dispose();
+            }catch (IOException except){
+                except.printStackTrace();
+            }
         }
     }//GEN-LAST:event_cadastrarCActionPerformed
 
@@ -226,9 +280,22 @@ public class CadastrarCliente extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O sobrenome não pode conter numeros ou caracteres especiais, por favor, digite novamente!");
         }
         else{
+            valSobrenome.setSelected(true);
             clienteC.setSobrenome(sobrenomeC.getText());
         }
     }//GEN-LAST:event_sobrenomeCActionPerformed
+
+    private void valSobrenomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valSobrenomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valSobrenomeActionPerformed
+
+    private void valCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valCpfActionPerformed
+
+    private void valNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_valNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_valNomeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -274,6 +341,9 @@ public class CadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField nomeC;
     private javax.swing.JTextField sobrenomeC;
+    private javax.swing.JCheckBox valCpf;
+    private javax.swing.JCheckBox valNome;
+    private javax.swing.JCheckBox valSobrenome;
     private javax.swing.JButton voltarC;
     // End of variables declaration//GEN-END:variables
 }

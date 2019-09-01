@@ -15,6 +15,7 @@ public class ListarClientes extends javax.swing.JFrame {
      */
     public ListarClientes(){
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

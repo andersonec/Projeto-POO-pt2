@@ -6,6 +6,7 @@ public class MenuGerente extends javax.swing.JFrame {
      */
     public MenuGerente() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -42,7 +43,8 @@ public class MenuGerente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(1, 1, 1));
-        setPreferredSize(new java.awt.Dimension(1024, 968));
+        setLocation(new java.awt.Point(0, 0));
+        setPreferredSize(new java.awt.Dimension(1024, 900));
         setResizable(false);
 
         jInternalFrame1.setBackground(new java.awt.Color(1, 1, 1));

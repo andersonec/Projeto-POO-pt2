@@ -16,6 +16,7 @@ public class Informacoes extends javax.swing.JFrame {
      */
     public Informacoes() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
