@@ -161,9 +161,9 @@ public class CadastrarCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(sobrenomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(valSobrenome))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(valSobrenome)
+                    .addComponent(sobrenomeC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -250,9 +250,9 @@ public class CadastrarCliente extends javax.swing.JFrame {
             try{
                 FileWriter cadastrarFile = new FileWriter(clientesCad, true);
                 BufferedWriter cadastrarBuff = new BufferedWriter(cadastrarFile);
-                cadastrarBuff.write("\n" + "\n" + clienteC.getCodigo() + 
+                cadastrarBuff.write(clienteC.getCodigo() + 
                                     "\nNome: " + clienteC.getNome() + " " + clienteC.getSobrenome() +
-                                    "\nCPF: " + clienteC.getCpf());
+                                    "\nCPF: " + clienteC.getCpf() + "\n");
                 JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
                 cadastrarBuff.close();
                 cadastrarFile.close();
