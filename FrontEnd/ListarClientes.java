@@ -1,11 +1,12 @@
 package FrontEnd;
 import java.io.*;
+import BackEnd.*;
 import javax.swing.JOptionPane;
 /**
  *
  * @author andersonsantos
  */
-public class ListarClientes extends javax.swing.JFrame {
+public class ListarClientes extends javax.swing.JInternalFrame {
     File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
     String cadastrados = null;
 
@@ -14,7 +15,6 @@ public class ListarClientes extends javax.swing.JFrame {
      */
     public ListarClientes(){
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -32,7 +32,7 @@ public class ListarClientes extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
+        setPreferredSize(new java.awt.Dimension(894, 598));
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
@@ -41,6 +41,8 @@ public class ListarClientes extends javax.swing.JFrame {
         jLabel1.setText("LISTA DE CLIENTES CADASTRADOS");
 
         listaCA.setBackground(new java.awt.Color(166, 166, 166));
+        listaCA.setEditable(false);
+        listaCA.setEnabled(false);
         listaCA.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
         listaCA.setForeground(new java.awt.Color(1, 1, 1));
 
@@ -90,7 +92,7 @@ public class ListarClientes extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listaCA, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE))
+                .addComponent(listaCA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,24 +100,14 @@ public class ListarClientes extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        try {
-            FileReader listarFile = new FileReader(clientesCad);
-            BufferedReader listarBuff = new BufferedReader(listarFile);
-            if (!clientesCad.exists()) {
-                JOptionPane.showMessageDialog(null, "NÃO TEMOS CLIENTES CADASTRADOS");
-            }
-            while (listarBuff.ready()) {
-                String linhaL = listarBuff.readLine();
-                cadastrados += "\n" + linhaL;
-            }
-            listarBuff.close();
-            listarFile.close();
-        } catch (IOException except) {
-                except.printStackTrace();
+        ManipularArquivo listarA = new ManipularArquivo();
+        String cadas = null;
+        try{
+            listarA.lerArquivo(clientesCad);
+        }catch(IOException except){
+            except.printStackTrace();
         }
-        //JOptionPane.showMessageDialog(null, cadastrados);
-        listaCA.append(cadastrados);
-        //dispose();
+        listaCA.append(listarA.getCadastrados());
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
