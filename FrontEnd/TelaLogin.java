@@ -46,16 +46,16 @@ public class TelaLogin extends javax.swing.JFrame {
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("Century Schoolbook L", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 129, 0));
+        jLabel1.setForeground(new java.awt.Color(95, 94, 94));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("LOGIN SISTEMA");
 
         jLabel2.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 129, 0));
+        jLabel2.setForeground(new java.awt.Color(95, 94, 94));
         jLabel2.setText("LOGIN:");
 
         jLabel3.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 129, 0));
+        jLabel3.setForeground(new java.awt.Color(95, 94, 94));
         jLabel3.setText("SENHA:");
 
         login.addActionListener(new java.awt.event.ActionListener() {
@@ -71,7 +71,7 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         jButton1.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 129, 0));
+        jButton1.setForeground(new java.awt.Color(95, 94, 94));
         jButton1.setText("LOGIN");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -137,7 +137,14 @@ public class TelaLogin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(login.getText().equals(gerente) && senha.getText().equals(senhaG)){
-            JOptionPane.showMessageDialog(null, "BEM VINDO");
+            JOptionPane.showMessageDialog(null, "BEM VINDO GERENTE");
+            MenuGerente menuGer = new MenuGerente();
+            menuGer.setVisible(true);
+        }
+        else if(login.getText().equals(vendedor) && senha.getText().equals(senhaV)){
+            JOptionPane.showMessageDialog(null, "BEM VINDO VENDEDOR");
+            //MenuVendedor menuVen = new MenuVendedor();
+            //menuVen.setVisible(true);
         }
         else{
             JOptionPane.showMessageDialog(null, "Acesso negado");
@@ -180,6 +187,8 @@ public class TelaLogin extends javax.swing.JFrame {
     }
     private String gerente = "Kalil";
     private String senhaG = "12345";
+    private String vendedor = "Anderson";
+    private String senhaV = "54321";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
