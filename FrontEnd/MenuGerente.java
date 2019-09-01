@@ -19,12 +19,12 @@ public class MenuGerente extends javax.swing.JFrame {
     private void initComponents() {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
-        jLabel2 = new javax.swing.JLabel();
+        telaPrincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
         cadastrarCliente = new javax.swing.JMenuItem();
         listarClientes = new javax.swing.JMenuItem();
-        removerCliente = new javax.swing.JMenuItem();
+        buscarCliente = new javax.swing.JMenuItem();
         listarRemovidos = new javax.swing.JMenuItem();
         menuProduto = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -44,17 +44,16 @@ public class MenuGerente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(1, 1, 1));
         setLocation(new java.awt.Point(0, 0));
-        setPreferredSize(new java.awt.Dimension(1024, 900));
+        setPreferredSize(new java.awt.Dimension(900, 650));
         setResizable(false);
 
         jInternalFrame1.setBackground(new java.awt.Color(1, 1, 1));
+        jInternalFrame1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jInternalFrame1.setForeground(new java.awt.Color(1, 1, 1));
         jInternalFrame1.setVisible(true);
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/oie_transparent.png"))); // NOI18N
-
-        jMenuBar1.setForeground(new java.awt.Color(255, 132, 0));
+        jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jMenuBar1.setForeground(new java.awt.Color(95, 94, 94));
 
         menuCliente.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         menuCliente.setForeground(new java.awt.Color(95, 94, 94));
@@ -81,10 +80,15 @@ public class MenuGerente extends javax.swing.JFrame {
         });
         menuCliente.add(listarClientes);
 
-        removerCliente.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        removerCliente.setForeground(new java.awt.Color(95, 94, 94));
-        removerCliente.setText("REMOVER");
-        menuCliente.add(removerCliente);
+        buscarCliente.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        buscarCliente.setForeground(new java.awt.Color(95, 94, 94));
+        buscarCliente.setText("BUSCAR CLIENTE");
+        buscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buscarClienteActionPerformed(evt);
+            }
+        });
+        menuCliente.add(buscarCliente);
 
         listarRemovidos.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
         listarRemovidos.setForeground(new java.awt.Color(95, 94, 94));
@@ -192,13 +196,11 @@ public class MenuGerente extends javax.swing.JFrame {
         jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
         jInternalFrame1Layout.setHorizontalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
+            .addComponent(telaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 898, Short.MAX_VALUE)
         );
         jInternalFrame1Layout.setVerticalGroup(
             jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame1Layout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(51, 51, 51))
+            .addComponent(telaPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -225,21 +227,31 @@ public class MenuGerente extends javax.swing.JFrame {
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
         // TODO add your handling code here:
-        Informacoes info = new Informacoes();
-        info.setVisible(true);
+        Informacoes infor = new Informacoes();
+        infor.setVisible(true);
+        telaPrincipal.add(infor);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
         // TODO add your handling code here:
         CadastrarCliente cadastrarC = new CadastrarCliente();
         cadastrarC.setVisible(true);
+        telaPrincipal.add(cadastrarC);
     }//GEN-LAST:event_cadastrarClienteActionPerformed
 
     private void listarClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarClientesActionPerformed
         // TODO add your handling code here:
         ListarClientes listarC = new ListarClientes();
         listarC.setVisible(true);
+        telaPrincipal.add(listarC);
     }//GEN-LAST:event_listarClientesActionPerformed
+
+    private void buscarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarClienteActionPerformed
+        // TODO add your handling code here:
+        BuscarCliente buscarC = new BuscarCliente();
+        buscarC.setVisible(true);
+        telaPrincipal.add(buscarC);
+    }//GEN-LAST:event_buscarClienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,10 +290,10 @@ public class MenuGerente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem buscarCliente;
     private javax.swing.JMenuItem cadastrarCliente;
     private javax.swing.JMenu informacao;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
@@ -299,6 +311,6 @@ public class MenuGerente extends javax.swing.JFrame {
     private javax.swing.JMenu menuCliente;
     private javax.swing.JMenu menuProduto;
     private javax.swing.JMenu menuVenda;
-    private javax.swing.JMenuItem removerCliente;
+    public javax.swing.JDesktopPane telaPrincipal;
     // End of variables declaration//GEN-END:variables
 }
