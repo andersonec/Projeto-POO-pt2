@@ -266,6 +266,8 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
             ManipularArquivo cadastro = new ManipularArquivo();
             try{
                 cadastro.escreverArquivo(objetoC);
+                JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
+                dispose();
             }catch(IOException except){
                 except.printStackTrace();
             }

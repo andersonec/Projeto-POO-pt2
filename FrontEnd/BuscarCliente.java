@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package FrontEnd;
+import BackEnd.*;
 import java.io.*;
 import javax.swing.JOptionPane;
 
@@ -162,19 +163,23 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
 
     private void buscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCActionPerformed
         // TODO add your handling code here:
+        ManipularArquivo imprimirNome = new ManipularArquivo();
+        ManipularArquivo imprimirCpf = new ManipularArquivo();
         int posicao = 0;
+        codigoB = buscarCod.getText();
         try {
             FileReader listarFile = new FileReader(clientesCad);
             BufferedReader listarBuff = new BufferedReader(listarFile);
+            imprimirNome.mapearArquivo(clientesCad);
+            imprimirCpf.mapearArquivo(clientesCad);
             for (int i = 0; i < clientesCad.length(); i++) {
                 String linhaL = listarBuff.readLine();
-                if(linhaL.equals(codigoB)){
-                    codigoB = linhaL;
-                    infoCliente.append(codigoB);
+                if(codigoB.equals(linhaL)){
                     posicao = i + 1;
+                    imprimirNome.setClienteEncontrado(posicao);
+                    imprimirCpf.setClienteEncontrado(posicao + 1);
+                    infoCliente.append(codigoB + "\n" + imprimirNome.getClienteEncontrado() + "\n" + imprimirCpf.getClienteEncontrado());
                     JOptionPane.showMessageDialog(null, "Cliente encontrado!");
-                    JOptionPane.showMessageDialog(null, posicao);
-                    
                 }
             }
             listarBuff.close();
@@ -187,7 +192,6 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
 
     private void buscarCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCodActionPerformed
         // TODO add your handling code here:
-        codigoB = buscarCod.getText();
     }//GEN-LAST:event_buscarCodActionPerformed
 
     private void voltarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarCActionPerformed

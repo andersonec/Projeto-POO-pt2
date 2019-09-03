@@ -4,7 +4,9 @@ import java.util.*;
 
 public class ManipularArquivo {
     File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
+    HashMap<Integer, String> linhasArquivo = new HashMap<Integer, String>();
     private String cadastrados = null;
+    private String clienteEncontrado = null;
     public void escreverArquivo(String objeto) throws IOException{
         FileWriter cadastrarFile = new FileWriter(clientesCad, true);
         PrintWriter cadastrarPrint = new PrintWriter(cadastrarFile);
@@ -30,12 +32,17 @@ public class ManipularArquivo {
         BufferedReader mapearBuff = new BufferedReader(new InputStreamReader(new FileInputStream(arquivo)));
         String linhaM = null;
         int numLinha = 0;
-        HashMap<Integer, String> linhasArquivo = new HashMap<Integer, String>();
         while((linhaM = mapearBuff.readLine()) != null){
             linhasArquivo.put(numLinha, linhaM);
             numLinha++;
         }
         mapearBuff.close();
         //usar linhasArquivo.get(NUMERO DA LINHA);
+    }
+    public void setClienteEncontrado(int posicaoLinha){
+        this.clienteEncontrado = linhasArquivo.get(posicaoLinha);
+    }
+    public String getClienteEncontrado(){
+        return clienteEncontrado;
     }
 }

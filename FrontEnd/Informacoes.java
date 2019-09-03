@@ -9,14 +9,13 @@ package FrontEnd;
  *
  * @author andersonsantos
  */
-public class Informacoes extends javax.swing.JFrame {
+public class Informacoes extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form Informacoes
      */
     public Informacoes() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
