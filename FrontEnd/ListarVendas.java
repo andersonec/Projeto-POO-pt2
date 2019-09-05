@@ -1,18 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package FrontEnd;
-import java.io.*;
 import BackEnd.*;
+import java.io.*;
 /**
  *
  * @author andersonsantos
  */
-public class ListarClientes extends javax.swing.JInternalFrame {
-    File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
-    //String cadastrados = null;
+public class ListarVendas extends javax.swing.JInternalFrame {
+    File vendasConcluidas = new File("./src/Arquivos/VendasConcluidas.txt");
 
     /**
-     * Creates new form ListarClientes
+     * Creates new form ListarVendas
      */
-    public ListarClientes(){
+    public ListarVendas() {
         initComponents();
     }
 
@@ -25,41 +29,41 @@ public class ListarClientes extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imprimirVendas = new javax.swing.JButton();
+        voltarVendas = new javax.swing.JButton();
+        listaVendas = new java.awt.TextArea();
         jLabel1 = new javax.swing.JLabel();
-        listaCA = new java.awt.TextArea();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(894, 598));
 
+        imprimirVendas.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
+        imprimirVendas.setForeground(new java.awt.Color(95, 94, 94));
+        imprimirVendas.setText("IMPRIMIR");
+        imprimirVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                imprimirVendasActionPerformed(evt);
+            }
+        });
+
+        voltarVendas.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
+        voltarVendas.setForeground(new java.awt.Color(95, 94, 94));
+        voltarVendas.setText("VOLTAR");
+        voltarVendas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarVendasActionPerformed(evt);
+            }
+        });
+
+        listaVendas.setBackground(new java.awt.Color(166, 166, 166));
+        listaVendas.setEditable(false);
+        listaVendas.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
+        listaVendas.setForeground(new java.awt.Color(1, 1, 1));
+
         jLabel1.setFont(new java.awt.Font("Century Schoolbook L", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(95, 94, 94));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("LISTA DE CLIENTES CADASTRADOS");
-
-        listaCA.setBackground(new java.awt.Color(166, 166, 166));
-        listaCA.setEditable(false);
-        listaCA.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
-        listaCA.setForeground(new java.awt.Color(1, 1, 1));
-
-        jButton2.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(95, 94, 94));
-        jButton2.setText("VOLTAR");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(95, 94, 94));
-        jButton3.setText("IMPRIMIR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
+        jLabel1.setText("LISTA DE VENDAS CONCLUIDAS");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -71,13 +75,13 @@ public class ListarClientes extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(18, 18, 18))
-                    .addComponent(listaCA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(listaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
             .addGroup(layout.createSequentialGroup()
                 .addGap(239, 239, 239)
-                .addComponent(jButton3)
+                .addComponent(imprimirVendas)
                 .addGap(141, 141, 141)
-                .addComponent(jButton2)
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addComponent(voltarVendas)
+                .addContainerGap(331, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,31 +90,31 @@ public class ListarClientes extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton2))
+                    .addComponent(imprimirVendas)
+                    .addComponent(voltarVendas))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listaCA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(listaVendas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void imprimirVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imprimirVendasActionPerformed
         // TODO add your handling code here:
-        ManipularArquivo listarA = new ManipularArquivo();
+        ManipularArquivo listarV = new ManipularArquivo();
         //String cadas = null;
         try{
-            listarA.lerArquivo(clientesCad);
+            listarV.lerArquivo(vendasConcluidas);
         }catch(IOException except){
             except.printStackTrace();
         }
-        listaCA.append(listarA.getObjetosRetornados());
-    }//GEN-LAST:event_jButton3ActionPerformed
+        listaVendas.append(listarV.getObjetosRetornados());
+    }//GEN-LAST:event_imprimirVendasActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void voltarVendasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarVendasActionPerformed
         // TODO add your handling code here:
         dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_voltarVendasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -129,28 +133,28 @@ public class ListarClientes extends javax.swing.JInternalFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListarClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarVendas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ListarClientes().setVisible(true);
+                new ListarVendas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton imprimirVendas;
     private javax.swing.JLabel jLabel1;
-    private java.awt.TextArea listaCA;
+    private java.awt.TextArea listaVendas;
+    private javax.swing.JButton voltarVendas;
     // End of variables declaration//GEN-END:variables
 }

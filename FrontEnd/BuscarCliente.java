@@ -14,7 +14,11 @@ import javax.swing.JOptionPane;
  */
 public class BuscarCliente extends javax.swing.JInternalFrame {
     File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
-
+    File clientesRem = new File("./src/Arquivos/clientesRemovidos.txt");
+    ManipularArquivo imprimirNome = new ManipularArquivo();
+    ManipularArquivo imprimirCpf = new ManipularArquivo();
+    String clienteBusca = null;
+    String codigoB = null;
     /**
      * Creates new form RemoverCliente
      */
@@ -41,8 +45,7 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         infoCliente = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jInternalFrame1.setPreferredSize(new java.awt.Dimension(894, 598));
         jInternalFrame1.setVisible(true);
@@ -120,7 +123,7 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
                                 .addGap(136, 136, 136)
                                 .addComponent(voltarC))
                             .addComponent(jScrollPane2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 191, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 190, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jInternalFrame1Layout.setVerticalGroup(
@@ -147,11 +150,11 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jInternalFrame1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 893, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jInternalFrame1, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
         );
 
         pack();
@@ -159,15 +162,35 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
 
     private void removerCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removerCActionPerformed
         // TODO add your handling code here:
+        int posicao = 0;
+        try {
+            imprimirNome.mapearArquivo(clientesRem);
+            imprimirCpf.mapearArquivo(clientesRem);
+            String objetoC = clienteBusca;
+            ManipularArquivo cadastro = new ManipularArquivo();
+            try{
+                cadastro.escreverArquivo(clientesRem, objetoC);
+                for (int i = 0; i < clientesCad.length(); i++) {
+                    posicao = i + 1;
+                    cadastro.removerDoArquivo(clientesCad, 
+                                              codigoB, 
+                                              imprimirNome.getClienteEncontrado(), 
+                                              imprimirCpf.getClienteEncontrado());
+                }
+                JOptionPane.showMessageDialog(null, "Removido com sucesso!");
+                dispose();
+            }catch(IOException except){
+                except.printStackTrace();
+            }
+        } catch (IOException except) {
+                except.printStackTrace();
+        }
     }//GEN-LAST:event_removerCActionPerformed
 
     private void buscarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCActionPerformed
         // TODO add your handling code here:
-        ManipularArquivo imprimirNome = new ManipularArquivo();
-        ManipularArquivo imprimirCpf = new ManipularArquivo();
         int posicao = 0;
-        codigoB = buscarCod.getText();
-        try {
+        try { 
             FileReader listarFile = new FileReader(clientesCad);
             BufferedReader listarBuff = new BufferedReader(listarFile);
             imprimirNome.mapearArquivo(clientesCad);
@@ -178,7 +201,9 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
                     posicao = i + 1;
                     imprimirNome.setClienteEncontrado(posicao);
                     imprimirCpf.setClienteEncontrado(posicao + 1);
-                    infoCliente.append(codigoB + "\n" + imprimirNome.getClienteEncontrado() + "\n" + imprimirCpf.getClienteEncontrado());
+                    clienteBusca = codigoB + "\n" + imprimirNome.getClienteEncontrado() + 
+                                             "\n" + imprimirCpf.getClienteEncontrado();
+                    infoCliente.append(clienteBusca);
                     JOptionPane.showMessageDialog(null, "Cliente encontrado!");
                 }
             }
@@ -187,11 +212,11 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
         } catch (IOException except) {
                 except.printStackTrace();
         }
-        //JOptionPane.showMessageDialog(null, cadastrados);
     }//GEN-LAST:event_buscarCActionPerformed
 
     private void buscarCodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarCodActionPerformed
         // TODO add your handling code here:
+        codigoB = buscarCod.getText();
     }//GEN-LAST:event_buscarCodActionPerformed
 
     private void voltarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarCActionPerformed
@@ -240,7 +265,6 @@ public class BuscarCliente extends javax.swing.JInternalFrame {
             }
         });
     }
-    String codigoB = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscarC;
     private javax.swing.JFormattedTextField buscarCod;

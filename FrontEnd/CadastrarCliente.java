@@ -262,10 +262,10 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
         else{
             String objetoC = clienteC.getCodigo() + 
                             "\nNome: " + clienteC.getNome() + " " + clienteC.getSobrenome() + 
-                            "\nCPF: " + clienteC.getCpf() + "\n";
+                            "\nCPF: " + clienteC.getCpf();
             ManipularArquivo cadastro = new ManipularArquivo();
             try{
-                cadastro.escreverArquivo(objetoC);
+                cadastro.escreverArquivo(clientesCad, objetoC);
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
                 dispose();
             }catch(IOException except){

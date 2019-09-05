@@ -1,57 +1,15 @@
-CLIENTES CADASTRADOS:
-
-7416
-Nome: Anderson Santos
-CPF: 12345678985
-
-2369
-Anderson Martins
-45698712365
-
-6330
-Alexandro Silva
-12365498785
-BackEnd.Cliente@3039e2d5
-BackEnd.Cliente@3039e2d5
-null
-7261 null
-7897 Tesste afsdfasd 53214568798
-9586
-Nome: aaaaaaa bbbbbbb
-CPF: 77777778985
-2138
-Nome: Alexandro Viado
-CPF: 24242424589
-
-4818
-Nome: Alexandre Santos
-CPF: 45698712358
-
-4818
-Nome: Alexandre Santos
-CPF: 45698712358
-
-9752
-Nome: Debora Gonçalves
-CPF: 45632198746
-
-1189
-Nome: Eduardo Passos
-CPF: 65432198764
-
 6106
 Nome: Bianca Martins
 CPF: 32165498725
-
-8839
-Nome: João Mendes
-CPF: 45632152588
-
-2189
-Nome: Mais UmCliente
-CPF: 45698715235
-
-3928
-Nome: Kalil Bispo
-CPF: 96385274137
-
+9089
+Nome: Anderson Martins
+CPF: 78945612397
+9711
+Nome: Anderson Santos
+CPF: 65498785232
+7591
+Nome: Suelen Lima
+CPF: 25874136985
+247
+Nome: Rafael Silva
+CPF: 32145698769

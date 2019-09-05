@@ -140,11 +140,13 @@ public class TelaLogin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "BEM VINDO GERENTE");
             MenuGerente menuGer = new MenuGerente();
             menuGer.setVisible(true);
+            dispose();
         }
         else if(login.getText().equals(vendedor) && senha.getText().equals(senhaV)){
             JOptionPane.showMessageDialog(null, "BEM VINDO VENDEDOR");
-            //MenuVendedor menuVen = new MenuVendedor();
-            //menuVen.setVisible(true);
+            MenuVendedor menuVen = new MenuVendedor();
+            menuVen.setVisible(true);
+            dispose();
         }
         else{
             JOptionPane.showMessageDialog(null, "Acesso negado");
@@ -185,9 +187,9 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
     }
-    private String gerente = "Kalil";
+    private String gerente = "Gerente";
     private String senhaG = "12345";
-    private String vendedor = "Anderson";
+    private String vendedor = "Vendedor";
     private String senhaV = "54321";
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
