@@ -45,14 +45,13 @@ public class Quantidade extends javax.swing.JInternalFrame {
         pesquisarp = new javax.swing.JButton();
         Adicionar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(894, 598));
 
-        jLabel1.setBackground(new java.awt.Color(31, 35, 38));
         jLabel1.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(95, 94, 94));
         jLabel1.setText("AUMENTAR QUANTIDADE DE PRODUTO");
 
-        jLabel2.setBackground(new java.awt.Color(31, 35, 38));
         jLabel2.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(95, 94, 94));
         jLabel2.setText("DIGITE O CODIGO DO PRODUTO ");
@@ -63,7 +62,7 @@ public class Quantidade extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setBackground(new java.awt.Color(31, 35, 38));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(95, 94, 94));
         jButton1.setText("VOLTAR");
@@ -93,6 +92,9 @@ public class Quantidade extends javax.swing.JInternalFrame {
             }
         });
 
+        pesquisarp.setBackground(new java.awt.Color(31, 34, 38));
+        pesquisarp.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
+        pesquisarp.setForeground(new java.awt.Color(95, 94, 94));
         pesquisarp.setText("PESQUISAR");
         pesquisarp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,6 +102,9 @@ public class Quantidade extends javax.swing.JInternalFrame {
             }
         });
 
+        Adicionar.setBackground(new java.awt.Color(31, 35, 38));
+        Adicionar.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
+        Adicionar.setForeground(new java.awt.Color(95, 94, 94));
         Adicionar.setText("ADICIONAR");
         Adicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -50,9 +50,9 @@ public class ProdutosExcluidos extends javax.swing.JInternalFrame {
         excluirp = new javax.swing.JButton();
         buscarp = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(894, 598));
 
-        jLabel1.setBackground(new java.awt.Color(31, 35, 38));
         jLabel1.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(95, 94, 94));
         jLabel1.setText("PRODUTOS EXCLUÍDOS");
@@ -64,7 +64,6 @@ public class ProdutosExcluidos extends javax.swing.JInternalFrame {
         infoproduto.setDisabledTextColor(new java.awt.Color(95, 94, 94));
         jScrollPane1.setViewportView(infoproduto);
 
-        jButton1.setBackground(new java.awt.Color(31, 35, 38));
         jButton1.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(95, 94, 94));
         jButton1.setText("VOLTAR");
@@ -75,17 +74,14 @@ public class ProdutosExcluidos extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel2.setBackground(new java.awt.Color(31, 35, 38));
         jLabel2.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(95, 94, 94));
         jLabel2.setText("DIGITE O CODIGO DO PRODUTO QUE DESEJA EXCLUIR: ");
 
-        jLabel3.setBackground(new java.awt.Color(31, 35, 38));
         jLabel3.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(95, 94, 94));
         jLabel3.setText("LISTA PRODUTOS  EXCLUIDOS: ");
 
-        buscarcodigop.setBackground(new java.awt.Color(31, 35, 38));
         buscarcodigop.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         buscarcodigop.setForeground(new java.awt.Color(95, 94, 94));
         buscarcodigop.setText("BUSCAR");
@@ -95,7 +91,6 @@ public class ProdutosExcluidos extends javax.swing.JInternalFrame {
             }
         });
 
-        excluirp.setBackground(new java.awt.Color(31, 35, 38));
         excluirp.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         excluirp.setForeground(new java.awt.Color(95, 94, 94));
         excluirp.setText("EXCLUIR");

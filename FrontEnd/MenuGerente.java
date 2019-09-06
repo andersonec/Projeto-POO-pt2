@@ -31,6 +31,7 @@ public class MenuGerente extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         menuVenda = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -101,10 +102,11 @@ public class MenuGerente extends javax.swing.JFrame {
 
         jMenuBar1.add(menuCliente);
 
+        menuProduto.setBackground(new java.awt.Color(31, 35, 38));
         menuProduto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         menuProduto.setForeground(new java.awt.Color(95, 94, 94));
         menuProduto.setText("PRODUTOS");
-        menuProduto.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
+        menuProduto.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
 
         jMenuItem1.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
         jMenuItem1.setForeground(new java.awt.Color(95, 94, 94));
@@ -145,6 +147,17 @@ public class MenuGerente extends javax.swing.JFrame {
             }
         });
         menuProduto.add(jMenuItem8);
+
+        jMenuItem3.setBackground(new java.awt.Color(31, 35, 38));
+        jMenuItem3.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
+        jMenuItem3.setForeground(new java.awt.Color(95, 94, 94));
+        jMenuItem3.setText("AUMENTAR QUANTIDADE PRODUTO");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        menuProduto.add(jMenuItem3);
 
         jMenuBar1.add(menuProduto);
 
@@ -313,6 +326,13 @@ public class MenuGerente extends javax.swing.JFrame {
         telaPrincipal.add(produtosExcluidos);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Quantidade qtd = new Quantidade();
+        qtd.setVisible(true);
+        telaPrincipal.add(qtd);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -361,6 +381,7 @@ public class MenuGerente extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem listarClientes;

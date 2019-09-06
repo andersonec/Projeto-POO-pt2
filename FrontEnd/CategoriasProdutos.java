@@ -58,9 +58,8 @@ public class CategoriasProdutos extends javax.swing.JInternalFrame {
         jTextArea1.setDisabledTextColor(new java.awt.Color(95, 94, 94));
         jScrollPane1.setViewportView(jTextArea1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setBackground(new java.awt.Color(31, 35, 38));
         jLabel1.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(95, 94, 94));
         jLabel1.setText("CATEGORIAS DE PRODUTOS ");
@@ -68,7 +67,7 @@ public class CategoriasProdutos extends javax.swing.JInternalFrame {
         categorias.setBackground(new java.awt.Color(153, 153, 153));
         categorias.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
         categorias.setForeground(new java.awt.Color(95, 94, 94));
-        categorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "6866" }));
+        categorias.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SAPATO", "CALÇA", "CASACO", "MOLETON", "CAMISA", "MERMUDA", "MEIA" }));
         categorias.setName(""); // NOI18N
         categorias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,9 +134,7 @@ public class CategoriasProdutos extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ListaProduto produto = new ListaProduto();
-        produto.setVisible(true);
-        dispose();
+           dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
