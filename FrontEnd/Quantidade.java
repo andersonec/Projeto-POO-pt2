@@ -15,7 +15,7 @@ import BackEnd.*;
  *
  * @author Alexandro
  */
-public class Quantidade extends javax.swing.JFrame {
+public class Quantidade extends javax.swing.JInternalFrame {
     File produtoCad = new File("./src/arquivos/produtosCadastrados.txt");
     String codigoP = null;
     /**

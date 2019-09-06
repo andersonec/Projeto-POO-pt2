@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  *
  * @author Alexandro
  */
-public class CadrastoProduto extends javax.swing.JFrame {
+public class CadrastoProduto extends javax.swing.JInternalFrame {
     File produtoCad = new File("./src/arquivos/produtosCadastrados.txt");
     Produto produto = new Produto();
     Random rand = new Random();
@@ -23,7 +23,6 @@ public class CadrastoProduto extends javax.swing.JFrame {
      */
     public CadrastoProduto() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**

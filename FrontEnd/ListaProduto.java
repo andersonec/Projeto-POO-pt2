@@ -12,7 +12,7 @@ import java.io.*;
  *
  * @author Alexandro
  */
-public class ListaProduto extends javax.swing.JFrame {
+public class ListaProduto extends javax.swing.JInternalFrame {
      File produtoCad = new File("./src/arquivos/produtosCadastrados.txt");
      String cadastrados = "";
     /**

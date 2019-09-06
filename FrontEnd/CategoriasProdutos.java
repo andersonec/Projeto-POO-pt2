@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author Alexandro
  */
-public class CategoriasProdutos extends javax.swing.JFrame {
+public class CategoriasProdutos extends javax.swing.JInternalFrame {
         File produtoCad = new File("./src/arquivos/produtosCadastrados.txt");
         File produtoRem = new File("./src/arquivos/produtosRemovido.txt");
         String codigoP = null;

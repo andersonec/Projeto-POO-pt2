@@ -28,10 +28,7 @@ public class MenuGerente extends javax.swing.JFrame {
         listarRemovidos = new javax.swing.JMenuItem();
         menuProduto = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
         menuVenda = new javax.swing.JMenu();
@@ -119,36 +116,34 @@ public class MenuGerente extends javax.swing.JFrame {
         });
         menuProduto.add(jMenuItem1);
 
-        jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenu1.setForeground(new java.awt.Color(95, 94, 94));
-        jMenu1.setText("CONSULTAR ESTOQUE");
-        jMenu1.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-
-        jMenuItem9.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem9.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem9.setText("CAMISETAS");
-        jMenu1.add(jMenuItem9);
-
-        jMenuItem10.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem10.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem10.setText("JAQUETAS");
-        jMenu1.add(jMenuItem10);
-
-        menuProduto.add(jMenu1);
-
-        jMenuItem6.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem6.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem6.setText("ALTERAR QUANTIDADE");
-        menuProduto.add(jMenuItem6);
+        jMenuItem2.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        jMenuItem2.setForeground(new java.awt.Color(95, 94, 94));
+        jMenuItem2.setText("LISTAR PRODUTOS");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        menuProduto.add(jMenuItem2);
 
         jMenuItem7.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
         jMenuItem7.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem7.setText("CONSULTAR ESGOTADOS");
+        jMenuItem7.setText("CATEGORIAS");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         menuProduto.add(jMenuItem7);
 
         jMenuItem8.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
         jMenuItem8.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem8.setText("PROMOÇÕES");
+        jMenuItem8.setText("PRODUTOS EXCLUIDOS");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         menuProduto.add(jMenuItem8);
 
         jMenuBar1.add(menuProduto);
@@ -236,6 +231,9 @@ public class MenuGerente extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        CadrastoProduto cadProduto = new CadrastoProduto();
+        cadProduto.setVisible(true);
+        telaPrincipal.add(cadProduto);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
@@ -294,6 +292,27 @@ public class MenuGerente extends javax.swing.JFrame {
         telaPrincipal.add(buscaC);
     }//GEN-LAST:event_jMenuItem13ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        ListaProduto listaProduto = new ListaProduto();
+        listaProduto.setVisible(true);
+        telaPrincipal.add(listaProduto);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        CategoriasProdutos categoriaProduto = new CategoriasProdutos();
+        categoriaProduto.setVisible(true);
+        telaPrincipal.add(categoriaProduto);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        ProdutosExcluidos produtosExcluidos = new ProdutosExcluidos();
+        produtosExcluidos.setVisible(true);
+        telaPrincipal.add(produtosExcluidos);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -335,18 +354,15 @@ public class MenuGerente extends javax.swing.JFrame {
     private javax.swing.JMenuItem cadastrarCliente;
     private javax.swing.JMenu informacao;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
-    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JMenuItem listarClientes;
     private javax.swing.JMenuItem listarRemovidos;
     private javax.swing.JMenu menuCliente;

@@ -13,7 +13,7 @@ import java.io.File;
  *
  * @author Alexandro
  */
-public class ProdutosExcluidos extends javax.swing.JFrame {
+public class ProdutosExcluidos extends javax.swing.JInternalFrame {
     File produtoCad = new File("./src/arquivos/produtosCadastrados.txt");
     File produtoRem = new File("./src/arquivos/produtosRemovido.txt");
     String codigoP = null;
