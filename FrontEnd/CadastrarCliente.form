@@ -199,16 +199,25 @@
       </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="valNome">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valNomeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="valSobrenome">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valSobrenomeActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="valCpf">
+      <Properties>
+        <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="valCpfActionPerformed"/>
       </Events>

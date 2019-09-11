@@ -1,11 +1,9 @@
 package BackEnd;
-import java.util.Scanner;
-public class Cliente {
+
+public class Cliente extends Pessoa{
     private int codigo;
-    private String nome;
-    private String sobrenome;
-    private long cpf;
     private String cadastroC;
+    private Pessoa pessoa;
 
     public void setCodigo(int codigo) {
         this.codigo = codigo;
@@ -14,30 +12,9 @@ public class Cliente {
         return codigo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-    public String getNome() {
-        return nome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setCpf(long cpf) {
-        this.cpf = cpf;
-    }
-    public long getCpf() {
-        return cpf;
-    }
-
     public void setCadastroC(String cadastroC) {
-        this.cadastroC += "\nNome" + getNome() + " " + getSobrenome() +
-                          "\nCPF: " + getCpf();
+        this.cadastroC += "\nNome" + pessoa.getNome() + " " + pessoa.getSobrenome() +
+                          "\nCPF: " + pessoa.getCpf();
     }
     public String getCadastroC() {
         return cadastroC;

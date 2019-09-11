@@ -7,6 +7,13 @@ public class ManipularArquivo {
     private String objetosRetornados = "";
     private String objetoEncontrado = "";
     
+    public void gravaObj(FileOutputStream arquivo, Object objeto) throws IOException{
+        try (ObjectOutputStream saida = new ObjectOutputStream(arquivo)) {
+            saida.writeObject(objeto);
+            saida.close();
+        }
+    }
+    
     public void escreverArquivo(File arquivo, String objeto) throws IOException{
         FileWriter cadastrarFile = new FileWriter(arquivo, true);
         PrintWriter cadastrarPrint = new PrintWriter(cadastrarFile);

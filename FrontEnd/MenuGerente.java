@@ -1,12 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package FrontEnd;
+
+/**
+ *
+ * @author andersonsantos
+ */
 public class MenuGerente extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuCliente
+     * Creates new form MenuGerente
      */
     public MenuGerente() {
         initComponents();
-        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -18,7 +27,6 @@ public class MenuGerente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jInternalFrame1 = new javax.swing.JInternalFrame();
         telaPrincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
@@ -31,7 +39,6 @@ public class MenuGerente extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
         menuVenda = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -40,17 +47,8 @@ public class MenuGerente extends javax.swing.JFrame {
         jMenuItem14 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(1, 1, 1));
-        setLocation(new java.awt.Point(0, 0));
-        setResizable(false);
-
-        jInternalFrame1.setBackground(new java.awt.Color(1, 1, 1));
-        jInternalFrame1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jInternalFrame1.setForeground(new java.awt.Color(1, 1, 1));
-        jInternalFrame1.setVisible(true);
 
         telaPrincipal.setBackground(new java.awt.Color(2, 12, 53));
-        telaPrincipal.setSelectedFrame(jInternalFrame1);
 
         jMenuBar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jMenuBar1.setForeground(new java.awt.Color(95, 94, 94));
@@ -102,11 +100,10 @@ public class MenuGerente extends javax.swing.JFrame {
 
         jMenuBar1.add(menuCliente);
 
-        menuProduto.setBackground(new java.awt.Color(31, 35, 38));
         menuProduto.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         menuProduto.setForeground(new java.awt.Color(95, 94, 94));
         menuProduto.setText("PRODUTOS");
-        menuProduto.setFont(new java.awt.Font("Century Schoolbook", 1, 14)); // NOI18N
+        menuProduto.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
 
         jMenuItem1.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
         jMenuItem1.setForeground(new java.awt.Color(95, 94, 94));
@@ -147,17 +144,6 @@ public class MenuGerente extends javax.swing.JFrame {
             }
         });
         menuProduto.add(jMenuItem8);
-
-        jMenuItem3.setBackground(new java.awt.Color(31, 35, 38));
-        jMenuItem3.setFont(new java.awt.Font("Century Schoolbook", 1, 12)); // NOI18N
-        jMenuItem3.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem3.setText("AUMENTAR QUANTIDADE PRODUTO");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
-            }
-        });
-        menuProduto.add(jMenuItem3);
 
         jMenuBar1.add(menuProduto);
 
@@ -215,53 +201,21 @@ public class MenuGerente extends javax.swing.JFrame {
 
         jMenuBar1.add(informacao);
 
-        jInternalFrame1.setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(telaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(telaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame1)
+            .addComponent(telaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(telaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        CadrastoProduto cadProduto = new CadrastoProduto();
-        cadProduto.setVisible(true);
-        telaPrincipal.add(cadProduto);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
-        // TODO add your handling code here:
-        NovaVenda sistemaVenda = new NovaVenda();
-        sistemaVenda.setVisible(true);
-        telaPrincipal.add(sistemaVenda);
-    }//GEN-LAST:event_jMenuItem11ActionPerformed
-
-    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        // TODO add your handling code here:
-        Informacoes infor = new Informacoes();
-        infor.setVisible(true);
-        telaPrincipal.add(infor);
-    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     private void cadastrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarClienteActionPerformed
         // TODO add your handling code here:
@@ -291,19 +245,12 @@ public class MenuGerente extends javax.swing.JFrame {
         telaPrincipal.add(listarR);
     }//GEN-LAST:event_listarRemovidosActionPerformed
 
-    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        ListarVendas listarV = new ListarVendas();
-        listarV.setVisible(true);
-        telaPrincipal.add(listarV);
-    }//GEN-LAST:event_jMenuItem12ActionPerformed
-
-    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
-        // TODO add your handling code here:
-        BuscarCompras buscaC = new BuscarCompras();
-        buscaC.setVisible(true);
-        telaPrincipal.add(buscaC);
-    }//GEN-LAST:event_jMenuItem13ActionPerformed
+        CadrastoProduto cadProduto = new CadrastoProduto();
+        cadProduto.setVisible(true);
+        telaPrincipal.add(cadProduto);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
@@ -326,12 +273,33 @@ public class MenuGerente extends javax.swing.JFrame {
         telaPrincipal.add(produtosExcluidos);
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Quantidade qtd = new Quantidade();
-        qtd.setVisible(true);
-        telaPrincipal.add(qtd);
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+        NovaVenda sistemaVenda = new NovaVenda();
+        sistemaVenda.setVisible(true);
+        telaPrincipal.add(sistemaVenda);
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jMenuItem12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem12ActionPerformed
+        // TODO add your handling code here:
+        ListarVendas listarV = new ListarVendas();
+        listarV.setVisible(true);
+        telaPrincipal.add(listarV);
+    }//GEN-LAST:event_jMenuItem12ActionPerformed
+
+    private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
+        // TODO add your handling code here:
+        BuscarCompras buscaC = new BuscarCompras();
+        buscaC.setVisible(true);
+        telaPrincipal.add(buscaC);
+    }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
+        // TODO add your handling code here:
+        Informacoes infor = new Informacoes();
+        infor.setVisible(true);
+        telaPrincipal.add(infor);
+    }//GEN-LAST:event_jMenuItem14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -359,7 +327,6 @@ public class MenuGerente extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MenuGerente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -373,7 +340,6 @@ public class MenuGerente extends javax.swing.JFrame {
     private javax.swing.JMenuItem buscarCliente;
     private javax.swing.JMenuItem cadastrarCliente;
     private javax.swing.JMenu informacao;
-    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem11;
@@ -381,7 +347,6 @@ public class MenuGerente extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem listarClientes;

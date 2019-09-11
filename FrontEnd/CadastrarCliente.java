@@ -9,9 +9,9 @@ import javax.swing.JOptionPane;
  */
 public class CadastrarCliente extends javax.swing.JInternalFrame {
     File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
+    ArrayList<Cliente> clienteL = new ArrayList();
     Cliente clienteC = new Cliente();
     Random rand = new Random();
-    
     /**
      * Creates new form CadastrarCliente
      */
@@ -96,18 +96,21 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
             }
         });
 
+        valNome.setEnabled(false);
         valNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valNomeActionPerformed(evt);
             }
         });
 
+        valSobrenome.setEnabled(false);
         valSobrenome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valSobrenomeActionPerformed(evt);
             }
         });
 
+        valCpf.setEnabled(false);
         valCpf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valCpfActionPerformed(evt);
@@ -223,29 +226,17 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
 
     private void cpfCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfCActionPerformed
         // TODO add your handling code here:
-        int numCpf = cpfC.getText().length();
-        char[] verificaCpf = cpfC.getText().toCharArray();
-        boolean ver = true;
-        for(int i = 0; i < verificaCpf.length; i++){
-            if(!Character.isDigit(verificaCpf[i])){
-                ver = false;
-            }
-        }
-        if(numCpf != 11){
-            JOptionPane.showMessageDialog(null, "O numero do CPF deve conter 11 digitos, por favor, digite novamente!");
-        }
-        else if(ver == false){
-            JOptionPane.showMessageDialog(null, "O numero do CPF deve conter apenas numeros, por favor, digite novamente!");
+        //ValidaCPF validar = new ValidaCPF();
+        String numCpf = cpfC.getText();
+        if(ValidaCPF.isCPF(numCpf)){
+            clienteC.setCpf(ValidaCPF.imprimeCPF(numCpf));
+            valCpf.setSelected(true);
         }
         else{
-            clienteC.setCpf(Long.parseLong(cpfC.getText()));
-            if(clienteC.getCpf() != 0){
-                valCpf.setSelected(true);
-            }
-            else{
-                valCpf.setSelected(false);
-            }
+            valCpf.setSelected(false);
+            JOptionPane.showMessageDialog(null, "Numero de CPF inválido, digite novamente!");
         }
+        
     }//GEN-LAST:event_cpfCActionPerformed
 
     private void cadastrarCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarCActionPerformed
@@ -256,16 +247,21 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
         else if(clienteC.getSobrenome() == null){
             JOptionPane.showMessageDialog(null, "Erro de Sobrenome, por favor, confira.");
         }
-        else if(clienteC.getCpf() == 0){
+        else if(clienteC.getCpf() == null){
             JOptionPane.showMessageDialog(null, "Erro de CPF, por favor, confira.");
         }
         else{
             String objetoC = clienteC.getCodigo() + 
-                            "\nNome: " + clienteC.getNome() + " " + clienteC.getSobrenome() + 
+                            "\nNome: " + clienteC.getNome() + 
+                            " " + clienteC.getSobrenome() + 
                             "\nCPF: " + clienteC.getCpf();
-            ManipularArquivo cadastro = new ManipularArquivo();
+            clienteL.add(clienteC);
+            ManipularArquivo cadastroObj = new ManipularArquivo();
             try{
-                cadastro.escreverArquivo(clientesCad, objetoC);
+                FileOutputStream clientesObj = new FileOutputStream("./src/Arquivos/clientesObj.ser");
+                cadastroObj.gravaObj(clientesObj, clienteC);
+                
+                cadastroObj.escreverArquivo(clientesCad, objetoC);
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");
                 dispose();
             }catch(IOException except){

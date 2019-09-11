@@ -1,7 +1,5 @@
 package BackEnd;
-import java.util.*;
-import java.util.regex.*;
-import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
+/*import java.util.*;
 import java.io.*;
 
 public class MenuCliente {
@@ -26,7 +24,7 @@ public class MenuCliente {
         } catch (IOException except) {
             except.printStackTrace();
         }
-    }
+    }*/
     
     
     /*   int i = 0;
@@ -69,6 +67,6 @@ public class MenuCliente {
                 System.out.println("LISTA DE CLIENTES EXCLUIDOS");
                 break;
             }
-        } while (optC != 0);*/
-    }
+        } while (optC != 0);
+    }*/
 
