@@ -1,55 +1,60 @@
 package BackEnd;
 import java.util.Scanner;
-public class Produto {
 
-    protected int codigo;
-    protected String nome;
-    protected int precoVenda;
-    protected int precoCusto;
-    protected int quantidade;   
-    private String fornecedor;
+/**
+ *
+ * @author Alexandro
+ */
+public  class Produto extends Prod  {
+
     
-    public void setCodigo(int codigo){
-        this.codigo = codigo;
+
+    public Produto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    public int getCodigo(){
-        return codigo;
-    }
-    public void setNome(String nome){
-        this.nome = nome;
-    }
-    public String getNome(){
-        return nome;
-    }
-    public void setPrecoVenda(int precoVenda){
-        this.precoVenda = precoVenda;
-    } 
-    public int getPrecoVenda(){
-        return precoVenda;
-    }
-    public void setPrecoCusto(int precoCusto){
-        this.precoCusto = precoCusto;
-    } 
-    public int getPrecoCusto(){
-        return precoCusto;
-    }
-        
-    public void setQuantidade(int quantidadeEntrada){
-        this.quantidade += quantidadeEntrada;
-    }
-    public int getQuantidade(){
-        return quantidade;
-    }
-     public void setFornecedor(String fornecedor){
-        this.fornecedor = fornecedor;
-    }
-    public String getFornecedor(){
-        return fornecedor;
-    
-    }
-    public void aumentarQuantidade(){
-       
+   
+
+    @Override
+    public void setCodigo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public void setNome() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setPrecoVenda() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setPrecoCusto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setQuantidade() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void setFornecedor() {
+        throw new UnsupportedOperationException("Note supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+public  Produto(int codigo,String nome, int precoVenda, int precoCusto, int quantidade, String fornecedor){
+    this.codigo = codigo;
+    this.nome = nome;
+    this.precoVenda = precoVenda;
+    this.precoCusto = precoCusto;
+    this.precoCusto = quantidade;   
+    this.fornecedor= fornecedor;
+}
+   // Produto produto1 = new Produto(9999,"SAPATO",30,40,6,"alimentos");
+
+ 
+
+ 
     
 }
