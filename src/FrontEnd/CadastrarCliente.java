@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
  */
 public class CadastrarCliente extends javax.swing.JInternalFrame {
     File clientesCad = new File("./src/Arquivos/clientesCadastrados.txt");
+    ManipularArquivo cadastroObj = new ManipularArquivo();
     ArrayList<Cliente> clienteL = new ArrayList();
     Cliente clienteC = new Cliente();
     Random rand = new Random();
@@ -256,10 +257,9 @@ public class CadastrarCliente extends javax.swing.JInternalFrame {
                             " " + clienteC.getSobrenome() + 
                             "\nCPF: " + clienteC.getCpf();
             clienteL.add(clienteC);
-            ManipularArquivo cadastroObj = new ManipularArquivo();
             try{
-                FileOutputStream clientesObj = new FileOutputStream("./src/Arquivos/clientesObj.ser");
-                cadastroObj.gravaObj(clientesObj, clienteC);
+                /*FileOutputStream clientesObj = new FileOutputStream("./src/Arquivos/clientesObj.ser");
+                cadastroObj.gravaObj(clientesObj, clienteC);*/
                 
                 cadastroObj.escreverArquivo(clientesCad, objetoC);
                 JOptionPane.showMessageDialog(null, "Cadastrado com sucesso!");

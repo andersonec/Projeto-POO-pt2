@@ -27,16 +27,15 @@ public class MenuVendedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jInternalFrame1 = new javax.swing.JInternalFrame();
         telaPrincipal = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuCliente = new javax.swing.JMenu();
         cadastrarCliente = new javax.swing.JMenuItem();
         menuProduto = new javax.swing.JMenu();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem7 = new javax.swing.JMenuItem();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem15 = new javax.swing.JMenuItem();
+        jMenuItem16 = new javax.swing.JMenuItem();
         menuVenda = new javax.swing.JMenu();
         jMenuItem11 = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -44,12 +43,7 @@ public class MenuVendedor extends javax.swing.JFrame {
         informacao = new javax.swing.JMenu();
         jMenuItem14 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jInternalFrame1.setBackground(new java.awt.Color(1, 1, 1));
-        jInternalFrame1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jInternalFrame1.setForeground(new java.awt.Color(1, 1, 1));
-        jInternalFrame1.setVisible(true);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         telaPrincipal.setBackground(new java.awt.Color(2, 12, 53));
 
@@ -78,27 +72,45 @@ public class MenuVendedor extends javax.swing.JFrame {
         menuProduto.setText("PRODUTOS");
         menuProduto.setFont(new java.awt.Font("Century Schoolbook L", 1, 14)); // NOI18N
 
-        jMenu1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jMenu1.setForeground(new java.awt.Color(95, 94, 94));
-        jMenu1.setText("CONSULTAR ESTOQUE");
-        jMenu1.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-
-        jMenuItem9.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem9.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem9.setText("CAMISETAS");
-        jMenu1.add(jMenuItem9);
-
-        jMenuItem10.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
-        jMenuItem10.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem10.setText("JAQUETAS");
-        jMenu1.add(jMenuItem10);
-
-        menuProduto.add(jMenu1);
-
         jMenuItem7.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
         jMenuItem7.setForeground(new java.awt.Color(95, 94, 94));
-        jMenuItem7.setText("CONSULTAR ESGOTADOS");
+        jMenuItem7.setText("ADICIONAR");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         menuProduto.add(jMenuItem7);
+
+        jMenuItem8.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        jMenuItem8.setForeground(new java.awt.Color(95, 94, 94));
+        jMenuItem8.setText("LISTAR PRODUTOS");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
+        menuProduto.add(jMenuItem8);
+
+        jMenuItem15.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        jMenuItem15.setForeground(new java.awt.Color(95, 94, 94));
+        jMenuItem15.setText("CATEGORIAS");
+        jMenuItem15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem15ActionPerformed(evt);
+            }
+        });
+        menuProduto.add(jMenuItem15);
+
+        jMenuItem16.setFont(new java.awt.Font("Century Schoolbook L", 1, 12)); // NOI18N
+        jMenuItem16.setForeground(new java.awt.Color(95, 94, 94));
+        jMenuItem16.setText("PRODUTOS EXCLUIDOS");
+        jMenuItem16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem16ActionPerformed(evt);
+            }
+        });
+        menuProduto.add(jMenuItem16);
 
         jMenuBar1.add(menuProduto);
 
@@ -156,32 +168,19 @@ public class MenuVendedor extends javax.swing.JFrame {
 
         jMenuBar1.add(informacao);
 
-        jInternalFrame1.setJMenuBar(jMenuBar1);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(telaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addComponent(telaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jInternalFrame1)
-                .addContainerGap())
+            .addComponent(telaPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jInternalFrame1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(telaPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 603, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -222,6 +221,34 @@ public class MenuVendedor extends javax.swing.JFrame {
         telaPrincipal.add(infor);
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+        CadrastoProduto cadProduto = new CadrastoProduto();
+        cadProduto.setVisible(true);
+        telaPrincipal.add(cadProduto);
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        ListaProduto listaProduto = new ListaProduto();
+        listaProduto.setVisible(true);
+        telaPrincipal.add(listaProduto);
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem15ActionPerformed
+        // TODO add your handling code here:
+        CategoriasProdutos categoriaProduto = new CategoriasProdutos();
+        categoriaProduto.setVisible(true);
+        telaPrincipal.add(categoriaProduto);
+    }//GEN-LAST:event_jMenuItem15ActionPerformed
+
+    private void jMenuItem16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem16ActionPerformed
+        // TODO add your handling code here:
+        ProdutosExcluidos produtosExcluidos = new ProdutosExcluidos();
+        produtosExcluidos.setVisible(true);
+        telaPrincipal.add(produtosExcluidos);
+    }//GEN-LAST:event_jMenuItem16ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -260,16 +287,15 @@ public class MenuVendedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cadastrarCliente;
     private javax.swing.JMenu informacao;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem14;
+    private javax.swing.JMenuItem jMenuItem15;
+    private javax.swing.JMenuItem jMenuItem16;
     private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenu menuCliente;
     private javax.swing.JMenu menuProduto;
     private javax.swing.JMenu menuVenda;
